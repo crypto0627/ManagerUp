@@ -1,10 +1,9 @@
-import TaskManager from "./components/Task-manager";
-
+import WelcomePortal from './components/portal';
 
 export default function Home() {
   return (
     <>
-      <TaskManager />
+      <WelcomePortal />
     </>
   );
 }

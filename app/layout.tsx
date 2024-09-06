@@ -1,22 +1,25 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 import Head from 'next/head';
-import localFont from "next/font/local";
-import "./globals.css";
+import localFont from 'next/font/local';
+import './globals.css';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+  src: './fonts/GeistVF.woff',
+  variable: '--font-geist-sans',
+  weight: '100 900',
 });
 const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+  src: './fonts/GeistMonoVF.woff',
+  variable: '--font-geist-mono',
+  weight: '100 900',
 });
 
 export const metadata: Metadata = {
-  title: "ManagerUp - Task-manager tools for web development",
-  description: "ManagerUp, frontend engineer, Backend engineer, FullStack engineer, UI/UX designer, Product Manager",
+  title: 'ManagerUp - Task-manager tools for web development',
+  description:
+    'ManagerUp, frontend engineer, Backend engineer, FullStack engineer, UI/UX designer, Product Manager',
 };
 
 export default function RootLayout({
@@ -32,7 +35,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="flex flex-col min-h-screen">
+          <Navbar />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );
